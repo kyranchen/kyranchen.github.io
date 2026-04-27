@@ -21,7 +21,6 @@
     --text-dim: #555;
     --accent: #c8ff5a;
     --accent-dim: rgba(200,255,90,0.12);
-    --accent-dim2: rgba(200,255,90,0.06);
     --serif: 'DM Serif Display', Georgia, serif;
     --sans: 'Instrument Sans', sans-serif;
     --mono: 'DM Mono', monospace;
@@ -72,22 +71,6 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--text); }
-  .nav-resume {
-    font-size: 12px;
-    color: var(--accent);
-    border: 1px solid rgba(200,255,90,0.35);
-    padding: 4px 12px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-family: var(--mono);
-    letter-spacing: 0.06em;
-    transition: all 0.2s;
-  }
-  .nav-resume:hover {
-    background: var(--accent-dim);
-    border-color: var(--accent);
-    color: var(--accent);
-  }
 
   /* HERO */
   .hero {
@@ -108,31 +91,6 @@
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 20%, transparent 100%);
   }
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.6s ease 0.2s forwards;
-  }
-  .hero-badge::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-    animation: pulse 2s ease infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.7); }
-  }
   .hero h1 {
     font-family: var(--serif);
     font-size: clamp(3.5rem, 8vw, 7rem);
@@ -141,7 +99,7 @@
     color: var(--text);
     margin-bottom: 1.5rem;
     opacity: 0;
-    animation: fadeUp 0.7s ease 0.35s forwards;
+    animation: fadeUp 0.7s ease 0.2s forwards;
   }
   .hero h1 em {
     font-style: italic;
@@ -150,17 +108,17 @@
   .hero-sub {
     font-size: 1.05rem;
     color: var(--text-muted);
-    max-width: 520px;
+    max-width: 500px;
     margin-bottom: 2.5rem;
     opacity: 0;
-    animation: fadeUp 0.7s ease 0.5s forwards;
+    animation: fadeUp 0.7s ease 0.35s forwards;
   }
   .hero-links {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     opacity: 0;
-    animation: fadeUp 0.7s ease 0.65s forwards;
+    animation: fadeUp 0.7s ease 0.5s forwards;
   }
   .btn {
     display: inline-flex;
@@ -191,8 +149,6 @@
     border-color: var(--border-hover);
     background: var(--surface);
   }
-
-  /* SCROLL LINE */
   .scroll-line {
     position: absolute;
     bottom: 2rem;
@@ -207,7 +163,7 @@
     color: var(--text-dim);
     text-transform: uppercase;
     opacity: 0;
-    animation: fadeUp 0.7s ease 0.9s forwards;
+    animation: fadeUp 0.7s ease 0.7s forwards;
   }
   .scroll-line::after {
     content: '';
@@ -215,7 +171,6 @@
     height: 48px;
     background: linear-gradient(to bottom, var(--text-dim), transparent);
   }
-
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -223,7 +178,7 @@
 
   /* SECTIONS */
   section {
-    padding: 6rem 3rem;
+    padding: 5rem 3rem;
     max-width: 1100px;
     margin: 0 auto;
   }
@@ -233,28 +188,20 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 1rem;
-  }
-  .section-title {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.1;
-    margin-bottom: 3rem;
-    color: var(--text);
+    margin-bottom: 2.5rem;
   }
 
   /* ABOUT */
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
+    gap: 4rem;
+    align-items: center;
   }
   .about-text p {
     color: var(--text-muted);
-    margin-bottom: 1.2rem;
     font-size: 1.05rem;
-    line-height: 1.75;
+    line-height: 1.8;
   }
   .about-text p strong { color: var(--text); font-weight: 500; }
   .about-stats {
@@ -275,12 +222,12 @@
   }
   .stat-num {
     font-family: var(--serif);
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     color: var(--accent);
     line-height: 1;
   }
   .stat-label {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--text-dim);
     font-family: var(--mono);
     letter-spacing: 0.06em;
@@ -289,21 +236,19 @@
   /* EXPERIENCE */
   .exp-item {
     display: grid;
-    grid-template-columns: 180px 1fr;
+    grid-template-columns: 160px 1fr;
     gap: 2rem;
     padding: 2.5rem 0;
     border-top: 1px solid var(--border);
   }
   .exp-item:last-child { border-bottom: 1px solid var(--border); }
-  .exp-meta {
-    padding-top: 2px;
-  }
   .exp-period {
     font-family: var(--mono);
     font-size: 11px;
     color: var(--text-dim);
     letter-spacing: 0.06em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
+    padding-top: 3px;
   }
   .exp-co {
     font-size: 13px;
@@ -312,7 +257,7 @@
   }
   .exp-tag {
     display: inline-block;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
     font-family: var(--mono);
     font-size: 10px;
     padding: 3px 8px;
@@ -323,25 +268,19 @@
   }
   .exp-content h3 {
     font-family: var(--serif);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: var(--text);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     font-weight: 400;
-  }
-  .exp-content .exp-role-sub {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-bottom: 1.2rem;
-    font-family: var(--mono);
   }
   .exp-bullets {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.65rem;
+    gap: 0.5rem;
   }
   .exp-bullets li {
-    font-size: 0.95rem;
+    font-size: 0.93rem;
     color: var(--text-muted);
     padding-left: 1.2rem;
     position: relative;
@@ -355,62 +294,67 @@
     font-size: 0.8rem;
     top: 2px;
   }
-  .exp-highlights {
+  .exp-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 1.2rem;
+    gap: 6px;
+    margin-top: 1rem;
   }
   .chip {
     font-family: var(--mono);
     font-size: 11px;
-    padding: 4px 10px;
+    padding: 3px 9px;
     border-radius: 4px;
     border: 1px solid var(--border);
     color: var(--text-dim);
-    letter-spacing: 0.04em;
+  }
+
+  /* SKILLS */
+  .skills-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .skill-tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .skill-tag:hover { border-color: var(--border-hover); color: var(--text); }
+  .skill-tag.primary {
+    border-color: var(--accent-dim);
+    color: var(--accent);
+    background: var(--accent-dim);
   }
 
   /* PROJECTS */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-  }
   .project-card {
-    background: var(--surface);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    transition: background 0.2s;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
   }
-  .project-card:hover { background: var(--surface2); }
-  .project-icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
-  }
+  .project-card:last-child { border-bottom: 1px solid var(--border); }
   .project-card h3 {
     font-family: var(--serif);
     font-size: 1.2rem;
     font-weight: 400;
     color: var(--text);
+    margin-bottom: 0.4rem;
   }
   .project-card p {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     color: var(--text-muted);
     line-height: 1.6;
-    flex: 1;
+    max-width: 640px;
+    margin-bottom: 0.75rem;
   }
   .project-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-top: 0.5rem;
   }
   .project-tag {
     font-family: var(--mono);
@@ -418,87 +362,6 @@
     padding: 3px 8px;
     border-radius: 3px;
     border: 1px solid var(--border);
-    color: var(--text-dim);
-  }
-  .project-card-links {
-    display: flex;
-    gap: 0.75rem;
-    margin-top: 0.5rem;
-  }
-  .project-link {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--accent);
-    text-decoration: none;
-    letter-spacing: 0.06em;
-    transition: opacity 0.2s;
-  }
-  .project-link:hover { opacity: 0.7; }
-  .projects-sublabel {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: 1rem;
-    margin-top: 2.5rem;
-  }
-  .projects-sublabel:first-of-type { margin-top: 0; }
-
-  /* SKILLS */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  .skill-group {
-    background: var(--surface);
-    padding: 1.5rem;
-  }
-  .skill-group h4 {
-    font-family: var(--mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-  }
-  .skill-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  .skill-list li {
-    font-size: 13px;
-    color: var(--text-muted);
-  }
-
-  /* EDUCATION */
-  .edu-item {
-    padding: 2rem 0;
-    border-top: 1px solid var(--border);
-  }
-  .edu-item:last-child { border-bottom: 1px solid var(--border); }
-  .edu-school {
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 0.25rem;
-  }
-  .edu-degree {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 0.25rem;
-  }
-  .edu-meta {
-    font-family: var(--mono);
-    font-size: 11px;
     color: var(--text-dim);
   }
 
@@ -511,19 +374,20 @@
   }
   .contact-text h2 {
     font-family: var(--serif);
-    font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.1;
-    margin-bottom: 1rem;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
   }
   .contact-text p {
     color: var(--text-muted);
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+    line-height: 1.7;
   }
   .contact-links {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.6rem;
   }
   .contact-link {
     display: flex;
@@ -531,9 +395,9 @@
     gap: 0.75rem;
     text-decoration: none;
     color: var(--text-muted);
-    font-size: 14px;
-    transition: color 0.2s;
-    padding: 0.75rem 1rem;
+    font-size: 13px;
+    transition: color 0.2s, background 0.2s;
+    padding: 0.7rem 1rem;
     border: 1px solid var(--border);
     border-radius: 8px;
     background: var(--surface);
@@ -545,13 +409,19 @@
   }
   .contact-link-icon {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 10px;
     color: var(--accent);
-    min-width: 60px;
+    min-width: 52px;
     letter-spacing: 0.08em;
   }
 
-  /* FOOTER */
+  .full-divider {
+    height: 1px;
+    background: var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
   footer {
     border-top: 1px solid var(--border);
     padding: 2rem 3rem;
@@ -568,15 +438,6 @@
     letter-spacing: 0.06em;
   }
 
-  /* DIVIDER */
-  .full-divider {
-    height: 1px;
-    background: var(--border);
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
@@ -592,7 +453,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">kyran.chen</a>
   <ul class="nav-links">
@@ -601,34 +461,28 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="resume.pdf" download class="nav-resume">Resume ↓</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-grid"></div>
-  <div class="hero-badge">Available for new opportunities</div>
   <h1>Backend<br>Engineer<br><em>Kyran Chen.</em></h1>
-  <p class="hero-sub">Building production-grade distributed systems — from cryptographic credential vaults to enterprise Shadow IT governance at Y Combinator-backed startups.</p>
+  <p class="hero-sub">Scala & Java systems engineer. Most recently building enterprise security infrastructure at a Y Combinator startup.</p>
   <div class="hero-links">
-    <a href="Kyran_Chen_Resume.pdf" download class="btn btn-primary">Download Resume ↓</a>
-    <a href="#contact" class="btn btn-ghost">Get in touch</a>
+    <a href="#contact" class="btn btn-primary">Get in touch</a>
     <a href="https://github.com/kyranchen" target="_blank" class="btn btn-ghost">GitHub ↗</a>
+    <a href="https://linkedin.com/in/kyranchen-92g" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
   </div>
   <div class="scroll-line">scroll</div>
 </div>
 
 <div class="full-divider"></div>
 
-<!-- ABOUT -->
 <section id="about">
-  <div class="section-label">// 01 about</div>
+  <div class="section-label">// about</div>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm a backend engineer with <strong>2 years of experience</strong> across backend engineering roles building scalable Scala and Java systems. My background spans distributed event-driven architecture, access control systems, and API design at scale.</p>
-      <p>Most recently I was at <strong>Swif.ai (Y Combinator S23)</strong>, where I owned the Shadow IT governance platform end-to-end — monitoring 7,000+ OAuth activities across 500+ enterprise users — and built the company's Password Vault from scratch, including a custom AES-256-GCM key-unwrapping layer.</p>
-      <p>I hold a <strong>B.A. in Mathematics and Computer Science</strong> from Boston University (GPA 3.67, cum laude). Primarily targeting US-based and remote roles. Currently based in Taiwan (GMT+8); open to relocation for the right US opportunity.</p>
+      <p>Backend engineer with <strong>2+ years</strong> shipping production Scala and Java systems — from cryptographic credential vaults to event-driven enterprise integrations. B.A. Mathematics & Computer Science, Boston University, cum laude. US citizen based in Taiwan, open to remote and US-based roles.</p>
     </div>
     <div class="about-stats">
       <div class="stat">
@@ -644,8 +498,8 @@
         <span class="stat-label">OAuth events monitored</span>
       </div>
       <div class="stat">
-        <span class="stat-num">~2</span>
-        <span class="stat-label">years production</span>
+        <span class="stat-num">~30%</span>
+        <span class="stat-label">unauthorized access reduced</span>
       </div>
     </div>
   </div>
@@ -653,28 +507,23 @@
 
 <div class="full-divider"></div>
 
-<!-- EXPERIENCE -->
 <section id="experience">
-  <div class="section-label">// 02 experience</div>
-  <div class="section-title">Where I've worked</div>
+  <div class="section-label">// experience</div>
 
   <div class="exp-item">
-    <div class="exp-meta">
+    <div>
       <div class="exp-period">Aug 2025 — Mar 2026</div>
       <div class="exp-co">Swif.ai</div>
       <div class="exp-tag">YC S23</div>
     </div>
     <div class="exp-content">
       <h3>Backend Engineer</h3>
-      <div class="exp-role-sub">Sunnyvale, CA · Remote</div>
       <ul class="exp-bullets">
-        <li>Architected a multi-layered Shadow IT governance platform in Scala — consolidating domain filtering, MDM policy, and software blocking into a unified API, monitoring 7,000+ OAuth activities and reducing unauthorized access by ~30% across 500+ enterprise users.</li>
-        <li>Built the Password Vault from scratch — admin CRUD and sharing APIs, employee browser extension endpoints, and a custom AES-256-GCM key-unwrapping layer for secure credential distribution across team boundaries.</li>
-        <li>Built an end-to-end PII tracking pipeline from browser extension event ingestion through reporting APIs and insight dashboards, enabling compliance teams to generate 4-stage scheduled audit reports.</li>
-        <li>Delivered enterprise integrations including AWS Marketplace billing lifecycle, CrowdStrike OAuth, and Google HRIS sync via Kafka; optimized MongoDB schema and indexing on core Shadow IT collections to reduce query overhead.</li>
-        <li>Shipped 70+ features across Shadow IT, Password Vault, Employee HRIS, Reporting, Geofencing, and Billing domains over 8 months on a continuous delivery cadence.</li>
+        <li>Architected the Shadow IT governance platform in Scala — unified domain filtering, MDM policy, and software blocking across 500+ enterprise users, cutting unauthorized access by ~30%.</li>
+        <li>Built the Password Vault from scratch — AES-256-GCM key-unwrapping layer, admin CRUD APIs, and employee browser extension endpoints for secure cross-team credential distribution.</li>
+        <li>Delivered AWS Marketplace billing, CrowdStrike OAuth, and Google HRIS sync via Kafka; optimized MongoDB indexing to reduce query overhead on high-volume collections.</li>
       </ul>
-      <div class="exp-highlights">
+      <div class="exp-chips">
         <span class="chip">Scala</span>
         <span class="chip">MongoDB</span>
         <span class="chip">Kafka</span>
@@ -687,24 +536,22 @@
   </div>
 
   <div class="exp-item">
-    <div class="exp-meta">
+    <div>
       <div class="exp-period">May 2024 — Aug 2025</div>
       <div class="exp-co">Systex</div>
       <div class="exp-tag">Taipei</div>
     </div>
     <div class="exp-content">
       <h3>Software Engineer</h3>
-      <div class="exp-role-sub">Taipei, Taiwan</div>
       <ul class="exp-bullets">
-        <li>Helped migrate server-side JSP rendering to a Vue.js SPA, improving page load times by 40% and increasing user engagement by 20%.</li>
-        <li>Developed RESTful APIs in Java Spring Boot across 4–5 multi-step workflows (~16–20 endpoints with full CRUD); integrated Swagger UI for API documentation and developer onboarding.</li>
+        <li>Migrated JSP server-side rendering to a Vue.js SPA — 40% faster page loads, 20% higher engagement.</li>
+        <li>Built 16–20 RESTful endpoints in Java Spring Boot across multi-step enterprise workflows.</li>
       </ul>
-      <div class="exp-highlights">
+      <div class="exp-chips">
         <span class="chip">Java</span>
         <span class="chip">Spring Boot</span>
         <span class="chip">Vue.js</span>
         <span class="chip">MySQL</span>
-        <span class="chip">Swagger</span>
         <span class="chip">Azure DevOps</span>
       </div>
     </div>
@@ -713,160 +560,52 @@
 
 <div class="full-divider"></div>
 
-<!-- PROJECTS -->
 <section id="projects">
-  <div class="section-label">// 03 projects</div>
-  <div class="section-title">Selected work</div>
-
-  <div class="projects-sublabel">Personal</div>
-  <div class="projects-grid" style="margin-bottom: 2rem;">
-    <div class="project-card">
-      <div class="project-icon">🎬</div>
-      <h3>Streamable</h3>
-      <p>Full-stack web app to discover where any movie can be streamed by region. Enter a title and country — it queries TMDb for metadata and JustWatch for real-time availability, surfacing results across Netflix, Hulu, Disney+, and more in one view.</p>
-      <div class="project-tags">
-        <span class="project-tag">JavaScript</span>
-        <span class="project-tag">Node.js</span>
-        <span class="project-tag">TMDb API</span>
-        <span class="project-tag">JustWatch API</span>
-      </div>
-      <div class="project-card-links">
-        <a href="https://github.com/kyranchen/Streamable" target="_blank" class="project-link">GitHub ↗</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="projects-sublabel">Professional</div>
-  <div class="projects-grid">
-    <div class="project-card">
-      <div class="project-icon">🔐</div>
-      <h3>Password Vault System</h3>
-      <p>Designed and implemented a production credential management system at Swif.ai — including admin CRUD APIs, employee browser extension endpoints, and a custom AES-256-GCM key-unwrapping layer for cross-team secure credential distribution.</p>
-      <div class="project-tags">
-        <span class="project-tag">Scala</span>
-        <span class="project-tag">AES-256-GCM</span>
-        <span class="project-tag">MongoDB</span>
-        <span class="project-tag">REST API</span>
-      </div>
-    </div>
-    <div class="project-card">
-      <div class="project-icon">🛡️</div>
-      <h3>Shadow IT Governance Platform</h3>
-      <p>Architected a multi-layered platform consolidating domain filtering, MDM policy, and software blocking into a unified API. Includes PII tracking pipeline, compliance dashboards, LLM usage analytics, and real-time enterprise notification system.</p>
-      <div class="project-tags">
-        <span class="project-tag">Scala</span>
-        <span class="project-tag">Kafka</span>
-        <span class="project-tag">MongoDB</span>
-        <span class="project-tag">Redis</span>
-      </div>
-    </div>
-    <div class="project-card">
-      <div class="project-icon">🏛️</div>
-      <h3>Boston 311 Data Analysis</h3>
-      <p>Collaborated with Boston City Council to analyze 20+ years of city service request data. Applied ML to 1.5M+ service records to identify under-resourced neighborhoods and surface resource gaps across Greater Boston. Presented findings to clients at BU Spark!</p>
-      <div class="project-tags">
-        <span class="project-tag">Python</span>
-        <span class="project-tag">SQL</span>
-        <span class="project-tag">Machine Learning</span>
-      </div>
+  <div class="section-label">// projects</div>
+  <div class="project-card">
+    <h3>Boston 311 Data Analysis</h3>
+    <p>Analyzed 20+ years of city service data with Boston City Council. Applied ML to 1.5M+ records to surface under-resourced neighborhoods across Greater Boston. Presented findings at BU Spark!</p>
+    <div class="project-tags">
+      <span class="project-tag">Python</span>
+      <span class="project-tag">SQL</span>
+      <span class="project-tag">Machine Learning</span>
     </div>
   </div>
 </section>
 
 <div class="full-divider"></div>
 
-<!-- SKILLS -->
 <section id="skills">
-  <div class="section-label">// 04 skills</div>
-  <div class="section-title">Technical stack</div>
-  <div class="skills-grid">
-    <div class="skill-group">
-      <h4>Languages</h4>
-      <ul class="skill-list">
-        <li>Scala</li>
-        <li>Java</li>
-        <li>Python</li>
-        <li>C++</li>
-        <li>JavaScript</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <h4>Backend</h4>
-      <ul class="skill-list">
-        <li>Spring Boot</li>
-        <li>Kafka</li>
-        <li>Redis</li>
-        <li>GraphQL</li>
-        <li>REST APIs</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <h4>Databases</h4>
-      <ul class="skill-list">
-        <li>MongoDB</li>
-        <li>MySQL</li>
-        <li>SQL</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <h4>Cloud & DevOps</h4>
-      <ul class="skill-list">
-        <li>Azure</li>
-        <li>AWS</li>
-        <li>Docker</li>
-        <li>Jenkins</li>
-        <li>Linux</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <h4>Practices</h4>
-      <ul class="skill-list">
-        <li>Event-driven architecture</li>
-        <li>Access control design</li>
-        <li>Schema optimization</li>
-        <li>CI/CD</li>
-        <li>JUnit testing</li>
-      </ul>
-    </div>
-    <div class="skill-group">
-      <h4>Frontend</h4>
-      <ul class="skill-list">
-        <li>Vue.js</li>
-        <li>HTML & CSS</li>
-        <li>JavaScript</li>
-        <li>Swagger UI</li>
-      </ul>
-    </div>
+  <div class="section-label">// skills</div>
+  <div class="skills-cloud">
+    <span class="skill-tag primary">Scala</span>
+    <span class="skill-tag primary">Java</span>
+    <span class="skill-tag primary">MongoDB</span>
+    <span class="skill-tag primary">Kafka</span>
+    <span class="skill-tag primary">Spring Boot</span>
+    <span class="skill-tag">Redis</span>
+    <span class="skill-tag">GraphQL</span>
+    <span class="skill-tag">AWS</span>
+    <span class="skill-tag">Azure</span>
+    <span class="skill-tag">Docker</span>
+    <span class="skill-tag">MySQL</span>
+    <span class="skill-tag">Python</span>
+    <span class="skill-tag">Vue.js</span>
+    <span class="skill-tag">Linux</span>
+    <span class="skill-tag">Jenkins</span>
+    <span class="skill-tag">JUnit</span>
+    <span class="skill-tag">Git</span>
   </div>
 </section>
 
 <div class="full-divider"></div>
 
-<!-- EDUCATION -->
-<section id="education">
-  <div class="section-label">// 05 education</div>
-  <div class="section-title">Academic background</div>
-  <div class="edu-item">
-    <div class="edu-school">Boston University</div>
-    <div class="edu-degree">B.A. Mathematics & Computer Science — GPA 3.67/4.0, cum laude</div>
-    <div class="edu-meta">Boston, MA · Sep 2021 – May 2023</div>
-  </div>
-  <div class="edu-item">
-    <div class="edu-school">University of Connecticut</div>
-    <div class="edu-degree">Transfer · Computer Science</div>
-    <div class="edu-meta">Storrs, CT · Aug 2019 – May 2021</div>
-  </div>
-</section>
-
-<div class="full-divider"></div>
-
-<!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
     <div class="contact-text">
-      <div class="section-label">// 06 contact</div>
+      <div class="section-label">// contact</div>
       <h2>Let's build something together.</h2>
-      <p>Currently open to full-time backend engineering roles — remote or US-based. I'm especially interested in Series A–C companies building developer tools, security infrastructure, or enterprise SaaS, ideally with a focused backend team where I can own problems end-to-end.</p>
+      <p>Open to backend engineering roles — remote or US-based. Interested in security infrastructure, developer tools, and enterprise SaaS.</p>
       <a href="mailto:kyranchen@gmail.com" class="btn btn-primary" style="display:inline-flex;">Send an email ↗</a>
     </div>
     <div class="contact-links">
