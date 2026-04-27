@@ -72,6 +72,22 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--text); }
+  .nav-resume {
+    font-size: 12px;
+    color: var(--accent);
+    border: 1px solid rgba(200,255,90,0.35);
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-family: var(--mono);
+    letter-spacing: 0.06em;
+    transition: all 0.2s;
+  }
+  .nav-resume:hover {
+    background: var(--accent-dim);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
 
   /* HERO */
   .hero {
@@ -404,6 +420,30 @@
     border: 1px solid var(--border);
     color: var(--text-dim);
   }
+  .project-card-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  .project-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: opacity 0.2s;
+  }
+  .project-link:hover { opacity: 0.7; }
+  .projects-sublabel {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+  }
+  .projects-sublabel:first-of-type { margin-top: 0; }
 
   /* SKILLS */
   .skills-grid {
@@ -561,6 +601,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="resume.pdf" download class="nav-resume">Resume ↓</a></li>
   </ul>
 </nav>
 
@@ -571,9 +612,9 @@
   <h1>Backend<br>Engineer<br><em>Kyran Chen.</em></h1>
   <p class="hero-sub">Building production-grade distributed systems — from cryptographic credential vaults to enterprise Shadow IT governance at Y Combinator-backed startups.</p>
   <div class="hero-links">
-    <a href="#contact" class="btn btn-primary">Get in touch</a>
+    <a href="resume.pdf" download class="btn btn-primary">Download Resume ↓</a>
+    <a href="#contact" class="btn btn-ghost">Get in touch</a>
     <a href="https://github.com/kyranchen" target="_blank" class="btn btn-ghost">GitHub ↗</a>
-    <a href="https://linkedin.com/in/kyranchen-92g" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
   </div>
   <div class="scroll-line">scroll</div>
 </div>
@@ -585,9 +626,9 @@
   <div class="section-label">// 01 about</div>
   <div class="about-grid">
     <div class="about-text">
-      <p>I'm a backend engineer with <strong>2+ years</strong> of production experience building scalable Scala and Java systems. My background spans distributed event-driven architecture, access control systems, and API design at scale.</p>
+      <p>I'm a backend engineer with <strong>2 years of experience</strong> across backend engineering roles building scalable Scala and Java systems. My background spans distributed event-driven architecture, access control systems, and API design at scale.</p>
       <p>Most recently I was at <strong>Swif.ai (Y Combinator S23)</strong>, where I owned the Shadow IT governance platform end-to-end — monitoring 7,000+ OAuth activities across 500+ enterprise users — and built the company's Password Vault from scratch, including a custom AES-256-GCM key-unwrapping layer.</p>
-      <p>I hold a <strong>B.A. in Mathematics and Computer Science</strong> from Boston University (GPA 3.67, cum laude). Currently based in Taiwan, open to remote and US-based roles.</p>
+      <p>I hold a <strong>B.A. in Mathematics and Computer Science</strong> from Boston University (GPA 3.67, cum laude). Primarily targeting US-based and remote roles. Currently based in Taiwan (GMT+8); open to relocation for the right US opportunity.</p>
     </div>
     <div class="about-stats">
       <div class="stat">
@@ -603,7 +644,7 @@
         <span class="stat-label">OAuth events monitored</span>
       </div>
       <div class="stat">
-        <span class="stat-num">2+</span>
+        <span class="stat-num">~2</span>
         <span class="stat-label">years production</span>
       </div>
     </div>
@@ -676,18 +717,27 @@
 <section id="projects">
   <div class="section-label">// 03 projects</div>
   <div class="section-title">Selected work</div>
-  <div class="projects-grid">
+
+  <div class="projects-sublabel">Personal</div>
+  <div class="projects-grid" style="margin-bottom: 2rem;">
     <div class="project-card">
-      <div class="project-icon">🏛️</div>
-      <h3>Boston 311 Data Analysis</h3>
-      <p>Collaborated with Boston City Council to analyze 20+ years of city service request data. Applied ML to 1.5M+ service records to identify under-resourced neighborhoods and surface resource gaps across Greater Boston. Presented findings to clients at BU Spark!</p>
+      <div class="project-icon">🎬</div>
+      <h3>Streamable</h3>
+      <p>Full-stack web app to discover where any movie can be streamed by region. Enter a title and country — it queries TMDb for metadata and JustWatch for real-time availability, surfacing results across Netflix, Hulu, Disney+, and more in one view.</p>
       <div class="project-tags">
-        <span class="project-tag">Python</span>
-        <span class="project-tag">SQL</span>
-        <span class="project-tag">Machine Learning</span>
-        <span class="project-tag">Excel</span>
+        <span class="project-tag">JavaScript</span>
+        <span class="project-tag">Node.js</span>
+        <span class="project-tag">TMDb API</span>
+        <span class="project-tag">JustWatch API</span>
+      </div>
+      <div class="project-card-links">
+        <a href="https://github.com/kyranchen/Streamable" target="_blank" class="project-link">GitHub ↗</a>
       </div>
     </div>
+  </div>
+
+  <div class="projects-sublabel">Professional</div>
+  <div class="projects-grid">
     <div class="project-card">
       <div class="project-icon">🔐</div>
       <h3>Password Vault System</h3>
@@ -708,6 +758,16 @@
         <span class="project-tag">Kafka</span>
         <span class="project-tag">MongoDB</span>
         <span class="project-tag">Redis</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-icon">🏛️</div>
+      <h3>Boston 311 Data Analysis</h3>
+      <p>Collaborated with Boston City Council to analyze 20+ years of city service request data. Applied ML to 1.5M+ service records to identify under-resourced neighborhoods and surface resource gaps across Greater Boston. Presented findings to clients at BU Spark!</p>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">SQL</span>
+        <span class="project-tag">Machine Learning</span>
       </div>
     </div>
   </div>
@@ -806,7 +866,7 @@
     <div class="contact-text">
       <div class="section-label">// 06 contact</div>
       <h2>Let's build something together.</h2>
-      <p>Currently open to full-time backend engineering roles — remote or US-based. I'm especially interested in companies building developer tools, security infrastructure, or enterprise SaaS.</p>
+      <p>Currently open to full-time backend engineering roles — remote or US-based. I'm especially interested in Series A–C companies building developer tools, security infrastructure, or enterprise SaaS, ideally with a focused backend team where I can own problems end-to-end.</p>
       <a href="mailto:kyranchen@gmail.com" class="btn btn-primary" style="display:inline-flex;">Send an email ↗</a>
     </div>
     <div class="contact-links">
@@ -821,10 +881,6 @@
       <a href="https://github.com/kyranchen" target="_blank" class="contact-link">
         <span class="contact-link-icon">github</span>
         kyranchen
-      </a>
-      <a href="tel:+19175950917" class="contact-link">
-        <span class="contact-link-icon">phone</span>
-        917-595-0917
       </a>
     </div>
   </div>
