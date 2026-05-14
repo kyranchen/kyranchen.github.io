@@ -364,6 +364,20 @@
     border: 1px solid var(--border);
     color: var(--text-dim);
   }
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+  .project-link {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: opacity 0.2s;
+  }
+  .project-link:hover { opacity: 0.65; }
 
   /* CONTACT */
   .contact-inner {
@@ -563,6 +577,35 @@
 
 <section id="projects">
   <div class="section-label">// projects</div>
+  <div class="project-card">
+    <h3>Credential Vault</h3>
+    <p>Multi-tenant credential management system — admins store AES-256-GCM encrypted passwords and share access with team members via role-based permissions. A Chrome extension handles auto-fill without ever exposing plaintext to the client. Enforces three-layer permission checks (JWT · org isolation · team grant) and writes immutable audit logs on every access.</p>
+    <div class="project-tags">
+      <span class="project-tag">Java 21</span>
+      <span class="project-tag">Spring Boot</span>
+      <span class="project-tag">MongoDB</span>
+      <span class="project-tag">AES-256-GCM</span>
+      <span class="project-tag">JWT</span>
+      <span class="project-tag">React</span>
+      <span class="project-tag">Chrome Extension</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/kyranchen/credential-vault" target="_blank" class="project-link">GitHub ↗</a>
+    </div>
+  </div>
+  <div class="project-card">
+    <h3>Streamable</h3>
+    <p>Full-stack web app to discover where any movie can be streamed by region. Enter a title and country — it queries TMDb for metadata and JustWatch for real-time availability, surfacing results across Netflix, Hulu, Disney+, and more in one view.</p>
+    <div class="project-tags">
+      <span class="project-tag">JavaScript</span>
+      <span class="project-tag">Node.js</span>
+      <span class="project-tag">TMDb API</span>
+      <span class="project-tag">JustWatch API</span>
+    </div>
+    <div class="project-links">
+      <a href="https://github.com/kyranchen/Streamable" target="_blank" class="project-link">GitHub ↗</a>
+    </div>
+  </div>
   <div class="project-card">
     <h3>Boston 311 Data Analysis</h3>
     <p>Analyzed 20+ years of city service data with Boston City Council. Applied ML to 1.5M+ records to surface under-resourced neighborhoods across Greater Boston. Presented findings at BU Spark!</p>
